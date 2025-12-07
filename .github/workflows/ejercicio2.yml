@@ -1,4 +1,4 @@
-name: "Ejercicio 2"
+name: Ejercicio 2
 
 on:
   push:
@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del código
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configurar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "18"
 
-      - name: Instalar dependencias (ninguna, pero npm necesita package.json)
+      - name: Instalar dependencias
         run: npm install
 
       - name: Ejecutar tests
