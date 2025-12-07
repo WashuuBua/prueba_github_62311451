@@ -1,4 +1,4 @@
-name: "Ejercicio 3"
+name: Ejercicio 3
 
 on:
   push:
@@ -9,7 +9,6 @@ jobs:
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
-
       - name: Verificación
         run: echo "Código verificado correctamente"
 
@@ -19,15 +18,12 @@ jobs:
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
-
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-
       - name: Instalar dependencias
         run: npm install
-
       - name: Ejecutar tests
         run: npm test
 
@@ -37,16 +33,15 @@ jobs:
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
-
       - name: Mensaje de build
         run: echo "Build completado exitosamente"
-
+      
       - name: Crear archivo build-info.txt
         run: |
           echo "Fecha del build:" > build-info.txt
           date >> build-info.txt
           echo "Version: 1.0.0" >> build-info.txt
-
+          
       - name: Subir artifact
         uses: actions/upload-artifact@v4
         with:
